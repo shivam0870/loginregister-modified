@@ -4,10 +4,13 @@ import mongoose from "mongoose"
 import dotenv from "dotenv";
 
 dotenv.config();
-
+mongoose.set('strictQuery', true);
 const app = express()
-app.use(express.json())
-app.use(express.urlencoded())
+
+app.use(express.urlencoded({extended: true})); 
+app.use(express.json());
+
+
 app.use(cors(
     {
         origin : [""],
