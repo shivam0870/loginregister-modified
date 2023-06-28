@@ -34,6 +34,11 @@ const userSchema = new mongoose.Schema({
 const User = new mongoose.model("User", userSchema)
 
 //Routes
+
+app.get("/", (req,res) => {
+    res.json("Hello")
+})
+
 app.post("/login", (req, res)=> {
     const { email, password} = req.body
     User.findOne({ email: email}, (err, user) => {
