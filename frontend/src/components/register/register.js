@@ -21,11 +21,11 @@ const Register = () => {
             [name]: value
         })
     }
-
+    axios.defaults.withCredentials = true;
     const register = () => {
         const { name, email, password, reEnterPassword } = user
         if( name && email && password && (password === reEnterPassword)){
-            axios.post("http://localhost:9002/register", user)
+            axios.post("https://loginregister-modified-api.vercel.app/register", user)
             .then( res => {
                 alert(res.data.message)
                 history.push("/login")

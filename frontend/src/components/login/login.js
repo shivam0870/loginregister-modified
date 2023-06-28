@@ -20,9 +20,9 @@ const Login = ({ setLoginUser}) => {
             [name]: value
         })
     }
-
+axios.defaults.withCredentials = true;
     const login = () => {
-        axios.post("http://localhost:9002/login", user)
+        axios.post("https://loginregister-modified-api.vercel.app/login", user)
         .then(res => {
             alert(res.data.message)
             setLoginUser(res.data.user)
