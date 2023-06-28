@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors(
     {
-        origin : ["https://deploy"],
+        origin : ["https://loginregister-modified-api.vercel.app/"],
         methods : ["POST" , "GET"],
         credentials : true
     }
